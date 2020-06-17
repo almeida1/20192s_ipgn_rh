@@ -2,6 +2,8 @@ package com.fatec.rh;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.fatec.rh.model.Funcionario;
 @SpringBootTest
 class CT01CadastrarFuncionario {
 	@Test

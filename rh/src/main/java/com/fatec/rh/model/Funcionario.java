@@ -1,4 +1,4 @@
-package com.fatec.rh;
+package com.fatec.rh.model;
 
 public class Funcionario {
 	String nome;
@@ -8,6 +8,10 @@ public class Funcionario {
 		setNome(umNome);
 		setRg(umRg);
 		setValorHora(umValorHora);
+	}
+	
+	public Funcionario() {
+		
 	}
 	public void setNome(String nome) {
 		if (nome.equals("") | nome.equals(null)) {
