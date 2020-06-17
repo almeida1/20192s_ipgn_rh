@@ -1,13 +1,24 @@
 package com.fatec.rh.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Funcionario {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	String nome;
 	String rg;
 	double valorHora;
-	public Funcionario(String umNome, String umRg, double umValorHora) {
+	int horasTrabalhadas;
+	public Funcionario(String umNome, String umRg, double valorHora, int horas) {
 		setNome(umNome);
 		setRg(umRg);
-		setValorHora(umValorHora);
+		setValorHora(valorHora);
+		
 	}
 	
 	public Funcionario() {
@@ -35,16 +46,14 @@ public class Funcionario {
 	public void setValorHora(double valorHora) {
 		this.valorHora = valorHora;
 	}
-	public double salarioBruto(int nroHorasTrabalhadas) {
-		return (valorHora * nroHorasTrabalhadas);
+	
+	public int getHorasTrabalhadas() {
+		return horasTrabalhadas;
 	}
-	public double salarioLiquido(double salarioBruto) {
-		double inss = salarioBruto * 0.1;
-		double ir = 0; // Se salario < 2000
-		if ((salarioBruto >= 2000) && (salarioBruto < 5000.0))
-			ir = salarioBruto * 0.15;
-		if (salarioBruto > 5000)
-			ir = salarioBruto * 0.275;
-		return (salarioBruto - inss - ir);
+
+	public void setHorasTrabalhadas(int horasTrabalhadas) {
+		this.horasTrabalhadas = horasTrabalhadas;
 	}
+
+	
 }

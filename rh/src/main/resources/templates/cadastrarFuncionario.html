@@ -49,7 +49,14 @@
 								<input type="text" th:field="*{rg}" class="form-control" id="rg" placeholder="RG"> 
 								<span th:if="${#fields.hasErrors('rg')}" th:errors="*{rg}" class="text-danger"> </span>
 							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="horasTrabalhadas" class="col-form-label">Horas trabalhadas</label> 
+								<input type="text" th:field="*{horasTrabalhadas}" class="form-control" id="horasTrabalhadas" placeholder="Horas"> 
+								<span th:if="${#fields.hasErrors('horasTrabalhadas')}" th:errors="*{horasTrabalhadas}" class="text-danger"> </span>
 							</div>
+						</div>
 						<div class="row">	
 							<div class="form-group col-md-8">
 								<label for="valorHora" class="col-form-label">Valor Hora</label> 

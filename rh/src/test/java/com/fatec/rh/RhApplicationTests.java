@@ -15,9 +15,9 @@ class RhApplicationTests {
 	public void CT01CadastrarFuncionarioDadosValidos(){
 		try{
 			//cenario
-			Funcionario umFuncionario;
+			Funcionario umFuncionario=null;
 			//acao
-			umFuncionario = new Funcionario("Jose da Silva", "111111", 25.00);
+			umFuncionario = new Funcionario("Jose da Silva", "111111", 25.00,10);
 			//verificacao
 			assertNotNull (umFuncionario);
 		}catch(RuntimeException e){

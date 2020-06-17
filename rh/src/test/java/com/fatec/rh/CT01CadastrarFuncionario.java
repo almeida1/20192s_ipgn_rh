@@ -12,7 +12,7 @@ class CT01CadastrarFuncionario {
 			// cenario
 			Funcionario umFuncionario;
 			// acao
-			umFuncionario = new Funcionario("Jose da Silva", "111111", 25.00);
+			umFuncionario = new Funcionario("Jose da Silva", "111111", 25.00, 10);
 			// verificacao
 			assertNotNull(umFuncionario);
 		} catch (RuntimeException e) {
@@ -25,7 +25,7 @@ class CT01CadastrarFuncionario {
 		Funcionario umFuncionario;
 		try{
 			//acao
-			umFuncionario = new Funcionario("", "111111", 25.00);
+			umFuncionario = new Funcionario("", "111111", 25.00,10);
 			fail("deveria lançar uma exceção");
 		}catch(RuntimeException e){
 			assertEquals("Nome invalido",e.getMessage());
