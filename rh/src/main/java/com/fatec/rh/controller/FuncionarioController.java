@@ -38,8 +38,16 @@ public class FuncionarioController {
 		if (result.hasErrors()) {
 			modelAndView.setViewName("cadastrarFuncionario");
 		} else {
+			servico.save(funcionario);
+			modelAndView.addObject("funcionarios", servico.findAll());
 			modelAndView.setViewName("consultarFuncionario");
 		}
+		return modelAndView;
+	}
+	@GetMapping("/consultar")
+	public ModelAndView retornaFormDeConsultaTodosFuncionarios() {
+		ModelAndView modelAndView = new ModelAndView("consultarLivro");
+		modelAndView.addObject("livros", servico.findAll());
 		return modelAndView;
 	}
 }

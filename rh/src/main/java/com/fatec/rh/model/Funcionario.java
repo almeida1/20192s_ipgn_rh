@@ -24,6 +24,15 @@ public class Funcionario {
 	public Funcionario() {
 		
 	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public void setNome(String nome) {
 		if (nome.equals("") | nome.equals(null)) {
 			throw new RuntimeException("Nome invalido");
