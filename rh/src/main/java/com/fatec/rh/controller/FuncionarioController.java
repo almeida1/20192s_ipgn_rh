@@ -40,14 +40,16 @@ public class FuncionarioController {
 		} else {
 			servico.save(funcionario);
 			modelAndView.addObject("funcionarios", servico.findAll());
+			modelAndView.addObject("salarioBruto", salarioBruto);
+			modelAndView.addObject("salarioLiquido", salarioLiquido);
 			modelAndView.setViewName("consultarFuncionario");
 		}
 		return modelAndView;
 	}
 	@GetMapping("/consultar")
 	public ModelAndView retornaFormDeConsultaTodosFuncionarios() {
-		ModelAndView modelAndView = new ModelAndView("consultarLivro");
-		modelAndView.addObject("livros", servico.findAll());
+		ModelAndView modelAndView = new ModelAndView("consultarFuncionario");
+		modelAndView.addObject("funcionarios", servico.findAll());
 		return modelAndView;
 	}
 }
